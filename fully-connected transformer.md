@@ -1,0 +1,1 @@
+A fully connected transformer use a self attention mechanism where every input tokens has a correlation with every other token in the sequence

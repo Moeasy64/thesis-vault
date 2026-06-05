@@ -1,0 +1,1 @@
+A problem related to GNN as the over-squshing. by increasing the number of layers inside a GNN, the encoding of the nodes tends to become the same vector.
