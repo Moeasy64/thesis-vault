@@ -1,7 +1,7 @@
 ---
 Type: Paper
 ---
-![[Papers/2809_rethinking_graph_transformers_.pdf]]
+![[Papers/rethinking_graph_transformers.pdf]]
 # Objective
 Extending the capability of transformers to non-sequential data through the **Spectral Attention Network (SAN)**.
 
