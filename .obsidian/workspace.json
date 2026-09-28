@@ -11,12 +11,14 @@
             "id": "f9a07bb6ca4ea9f7",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "Books/Spectral Graph Theory (CBMS Regional Conference Series in Mathematics, No. 92) (Fan R. K. Chung) (z-library.sk, 1lib.sk, z-lib.sk).pdf"
+                "file": "Introduction to Spectral Graph Theory.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "Spectral Graph Theory (CBMS Regional Conference Series in Mathematics, No. 92) (Fan R. K. Chung) (z-library.sk, 1lib.sk, z-lib.sk)"
+              "icon": "lucide-file",
+              "title": "Introduction to Spectral Graph Theory"
             }
           }
         ]
@@ -185,23 +187,25 @@
   },
   "active": "f9a07bb6ca4ea9f7",
   "lastOpenFiles": [
+    "Laplacian Matrix.md",
+    "Introduction to Spectral Graph Theory.md",
+    "Linear Algebra Fundamentals.md",
+    "Laplacian Spectrum.md",
+    "Books/Spectral Graph Theory (CBMS Regional Conference Series in Mathematics, No. 92) (Fan R. K. Chung) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
+    "Orthogonal Matrices.md",
+    "over-squashing.md",
+    "Sign and Basis Invariant Networks For Spectral Graph Representation Learning.md",
+    "Rethinking Graph Transformers with Spectral Attention.md",
+    "oversmoothing.md",
+    "Orthogonal Group.md",
     "1 - TODO.md",
     "What Improves the Generalization of Graph Transformers? A Theoretical Diveinto the Self-attention and Positional Encoding.md",
-    "Books/Spectral Graph Theory (CBMS Regional Conference Series in Mathematics, No. 92) (Fan R. K. Chung) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
     "Books",
-    "Rethinking Graph Transformers with Spectral Attention.md",
-    "Laplacian Spectrum.md",
-    "Orthogonal Group.md",
-    "over-squashing.md",
-    "oversmoothing.md",
     "Survey on Spectral Geometry as Positional Encoding in Graph Transformers.md",
-    "Sign and Basis Invariant Networks For Spectral Graph Representation Learning.md",
-    "Laplacian Matrix.md",
     "images/Pasted image 20260424183846.png",
     "Papers/SIGN AND BASIS INVARIANT NETWORKS FOR SPECTRAL GRAPH REPRESENTATION LEARNING.pdf",
     "Papers/rethinking_graph_transformers.pdf",
     "fully-connected transformer.md",
-    "Orthogonal Matrices.md",
     "Papers/what_improvise_generalization_of_graph.pdf",
     "Papers/2406.01977v1.pdf",
     "Papers/2809_rethinking_graph_transformers_.pdf",
