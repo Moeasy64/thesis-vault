@@ -82,6 +82,42 @@ We take the span from $v_1$ up to $v_k$ because the associated eigenvalues keep 
 
 **Summary:** we use the Rayleigh quotient to find eigenvectors and eigenvalues.
 
+## Spectral Properties
+
+### Theorem 1 — non-negative eigenvalues
+
+$$\lambda_i \ge 0 \;\; \forall\, 1\le i\le n \quad\Longrightarrow\quad \gamma_i \ge 0 \;\; \forall\, 1\le i \le n$$
+
+where $\gamma_i$ are the eigenvalues of the normalized Laplacian $\mathcal L$.
+
+**Proof.** Start from Rayleigh and rewrite the numerator using $L$: given an undirected graph $G=(V,E)$ with vertices $v_1,\dots,v_n$, for every $x\in\mathbb R^n$:
+
+$$x^\top L x = x^\top(D-A)x = (x_1\ \cdots\ x_n)\begin{bmatrix} d_1x_1 - \sum_{v_i\sim v_1} x_i \\ \vdots \\ d_nx_n - \sum_{v_i\sim v_n} x_i\end{bmatrix}$$
+
+$$= \sum_{i=1}^n x_i\Big(d_ix_i - \sum_{v_i\sim v_j} x_j\Big) = \sum_{i=1}^n x_i^2 d_i - \sum_{v_i\sim v_j} x_i x_j \;{=}\; \sum_{v_i\sim v_j} (x_i-x_j)^2$$
+
+So the numerator is always positive (a sum of squares), and the same holds for the denominator (the squared norm of $x$). Hence, when $x$ is an eigenvector, the associated eigenvalue is necessarily non-negative.
+
+### Theorem 2 — eigenvalue ranges
+
+Let $G=(V,E)$ be a graph where $d$ is the maximum degree among the vertices of $G$. Then:
+
+- the interval $[-d,\,d]$ contains the eigenvalues of the adjacency matrix $A$,
+- the interval $[0,\,2d]$ contains those of the Laplacian $L$,
+- the interval $[0,\,2]$ contains those of the normalized Laplacian $\mathcal L$.
+
+> **Question for later:** how do these intervals influence positional encoding? Does the fact that $\mathcal L$'s interval is fixed independently of $d$ make learning easier (or any difference at all)? Are there empirical results where one of the three matrices consistently prevails? Is it always the same matrix that wins, across every task?
+
+### Theorem 3 — bipartiteness
+
+Given a graph $G=(V,E)$, the following statements are equivalent:
+
+1. $G$ is a bipartite graph
+2. if $a$ is an eigenvalue of $A$, then $-a$ is also an eigenvalue
+3. $\displaystyle\sum_{i=1}^n a_i^r = \text{Tr}(A^r)$ for every odd $r$
+
+> **Question for later:** how does point 2 tie into positional encoding?
+
 ---
 
 *(Notes end here — to be continued.)*
