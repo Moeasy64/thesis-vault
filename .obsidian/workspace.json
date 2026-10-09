@@ -25,12 +25,14 @@
             "id": "f265ba414b280760",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "Papers/rethinking_graph_transformers.pdf"
+                "file": "Rethinking Graph Transformers with Spectral Attention.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "rethinking_graph_transformers"
+              "icon": "lucide-file",
+              "title": "Rethinking Graph Transformers with Spectral Attention"
             }
           }
         ],
@@ -200,29 +202,29 @@
   },
   "active": "f265ba414b280760",
   "lastOpenFiles": [
-    "Rethinking Graph Transformers with Spectral Attention.md",
-    "Papers/rethinking_graph_transformers.pdf",
+    "Transformers.md",
     "Sign and Basis Invariant Networks For Spectral Graph Representation Learning.md",
-    "Orthogonal Group.md",
+    "oversmoothing.md",
     "Laplacian Spectrum.md",
+    "Introduction to Spectral Graph Theory.md",
+    "1 - TODO.md",
+    "Papers/rethinking_graph_transformers.pdf",
+    "Rethinking Graph Transformers with Spectral Attention.md",
+    "Orthogonal Group.md",
     "Papers/Attention Is All You Need.pdf",
     "Pasted image 20261009175338.png",
-    "Transformers.md",
     "Papers/SIGN AND BASIS INVARIANT NETWORKS FOR SPECTRAL GRAPH REPRESENTATION LEARNING.pdf",
     "Papers/Spectral Geometry Processing with Manifold Harmonics.pdf",
     "Papers/Spectral Graph theory Introduction.pdf",
     "Papers/what_improvise_generalization_of_graph.pdf",
     "images/Pasted image 20261008182946.png",
     "What Improves the Generalization of Graph Transformers? A Theoretical Diveinto the Self-attention and Positional Encoding.md",
-    "Introduction to Spectral Graph Theory.md",
     "Linear Algebra Fundamentals.md",
     "over-squashing.md",
     "Untitled.base",
     "Untitled.canvas",
     "Books/Spectral Graph Theory (CBMS Regional Conference Series in Mathematics, No. 92) (Fan R. K. Chung) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
-    "1 - TODO.md",
     "Books",
-    "oversmoothing.md",
     "Survey on Spectral Geometry as Positional Encoding in Graph Transformers.md",
     "Laplacian Matrix.md",
     "images/Pasted image 20260424183846.png",
