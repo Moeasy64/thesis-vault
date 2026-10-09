@@ -134,8 +134,20 @@ A **linear operator** is a particular kind of linear application where the domai
 
 If the basis of an endomorphism is made up solely of eigenvectors, the endomorphism is called **simple**, and it is defined by a **diagonalizable** matrix, with all eigenvalues real. (Note: multiple bases made of orthonormal eigenvectors can exist for the space of a given endomorphism.)
 
-**NB:** symmetric square matrices — such as, for example, the **Laplacian matrix** — are always diagonalizable.
+**NB:** symmetric square matrices — such as, for example, the **Laplacian matrix** — are an interesting case of diagonalizable matrices.
 
----
+## Eigenspace
+
+An eigenspace is the vector subspace associated to all the eigenvector of a specific eigenvalue and the zero vector.
+
+ It is closed under vector addition and scalar multiplication, making it a valid subspace of the original vector space.
+
+Two different eigenspaces of the same matrix have disjoint union of their vector sets (unless the zero vector). Imagine a vector $v \neq 0$, if it belongs to two distinct eigenspaces of $\lambda_1$ and $\lambda_2$ then we would have $Av =  \lambda v_1$ and $Av =  \lambda v_2$. Meaning that the only possible case is $\lambda_1 = \lambda_2$.
+
+The dimension of the eigenspace is called the geometric multiplicity of the eigenvalue, representing the number of linearly independent eigenvectors associated with $\lambda$.
+
+A matrix is diagonalizable if and only if the sum of the dimensions of its eigenspaces equals the dimension of the vector space (i.e., there exists a basis of eigenvectors).
+
+ Eigenspaces are guaranteed to be orthogonal only when the matrix is **symmetric**
 
 *Continued in [[Introduction to Spectral Graph Theory]].*

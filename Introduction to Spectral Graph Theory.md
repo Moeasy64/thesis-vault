@@ -1,4 +1,4 @@
-Follows on from [[Linear Algebra Fundamentals]] — preparatory notes toward using the [[Laplacian Matrix|Laplacian]] and its [[Laplacian Spectrum|spectrum]] as positional encoding in transformers.
+Follows on from [[Linear Algebra Fundamentals]] — preparatory notes toward using the [[Laplacian Matrix|Laplacian]] and its [[Laplacian Spectrum|spectrum]] as positional encoding in transformers. Extracted from [[Spectral Graph theory Introduction.pdf]] 
 
 **Work in progress — not yet complete.**
 
@@ -17,6 +17,7 @@ $$A_{ij} = \begin{cases}1 & \text{if } v_i \sim v_j\\ 0 & \text{otherwise}\end{c
 $$L_{ij} = \begin{cases} d_{v_i} & \text{if } v_i = v_j\\ -1 & \text{if } v_i \sim v_j \\ 0 & \text{otherwise}\end{cases}$$
 
 where $d_{v_i}$ is the degree of $v_i$. Obtained as $L = D - A$, where $D$ is the (symmetric, diagonal) degree matrix. See [[Laplacian Matrix]].
+N.B: the difference of two symmetrical matrix still gives a symmetrical matrix, so $L$ is still symmetrical.
 
 ## Normalized Laplacian
 
