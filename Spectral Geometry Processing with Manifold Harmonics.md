@@ -37,6 +37,12 @@ plus a normalization factor.
 
 The set of all $\tilde{f}_k$ is the spectrum: it tells us how much of the function $f(x)$ is present at the corresponding frequency, it is the **energy** present at that frequency.
 
-In order to apply this transform on Manifold and to find its $H_k$ that forms the **Manifold Harmonic Basis (MHB)**, we need to define inner product and second order derivatives on manifolds through DEC.
+The key observation is that the Fourier basis functions $H^k$ ($\sin kx$, $\cos kx$) are the eigenfunctions of the operator $-\partial^2/\partial x^2$, with eigenvalues $k^2$.
+
+This suggests generalizing Fourier analysis to a manifold by using as basis the eigenfunctions of its Laplace–Beltrami operator, the natural generalization of the second derivative. To do so we need a Laplacian and an inner product defined on the mesh, which the paper obtains through Discrete Exterior Calculus (via the Hodge star $\star_0$).
+
+On a generic manifold no closed-form expression for these eigenfunctions exists, so the Manifold Harmonic Basis (MHB) must be computed numerically: we assemble the discrete symmetric Laplacian matrix $\bar\Delta$ and compute its eigenvectors $\bar H^k$, then map them back with $H^k = \star_0^{-1/2}\bar H^k$.
+
+The eigendecomposition is the expensive step, and making it scalable is the main computational contribution of the paper (Sec. 4).
 
 to hold an orthonormalized matrix for manifolds, we begin by creating a **discrete laplacian matrix**, which it is not described in the standard basis $\phi_i$, but in an orthonormal basis $\bar\phi_i$; we then compute its eigenvector $\bar H^k$. As last step, we map back the eigenvectors in the standard basis through a special matrix $\star_0$: $H^k=\star_0^{-\frac{1}{2}}\bar{H}^k$

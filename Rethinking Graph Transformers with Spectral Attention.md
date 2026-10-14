@@ -17,7 +17,7 @@ This LPE is then added to the features of the graph and passed to a [[fully-conn
 > Actually in the code and in Section 3 the LPE is concatenated to the embedding vector representing a node/edge. It is not a sum, that makes more sense, in fact the embedding vector for a node/edge is of dimention $n$, while the LPE embedding vector has a different dimention named $k$.
 
 # Improvements
-* Surpassing the typical [[over-squashing]] and [[oversmoothing]] symptom of GNNs.
+* Surpassing the typical [[over-squashing]] and [[over-smoothing]] symptom of GNNs.
 * Performs better or equal than every state of the art attention based architecture and GNN on graphs.
 * First fully-connected model that performs good on graphs
 * Exploits the full laplacian spectrum to learn the position of every node (uses a mask for smaller graphs)

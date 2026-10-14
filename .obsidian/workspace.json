@@ -4,47 +4,33 @@
     "type": "split",
     "children": [
       {
-        "id": "851ee39a7660288f",
+        "id": "61698611fd254525",
         "type": "tabs",
         "children": [
           {
-            "id": "f9a07bb6ca4ea9f7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Spectral Geometry Processing with Manifold Harmonics.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Spectral Geometry Processing with Manifold Harmonics"
-            }
-          },
-          {
-            "id": "61013cf0ddd6edd7",
+            "id": "f265ba414b280760",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Papers/Spectral Geometry Processing with Manifold Harmonics.pdf"
+                "file": "Papers/SIGN AND BASIS INVARIANT NETWORKS FOR SPECTRAL GRAPH REPRESENTATION LEARNING.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "Spectral Geometry Processing with Manifold Harmonics"
+              "title": "SIGN AND BASIS INVARIANT NETWORKS FOR SPECTRAL GRAPH REPRESENTATION LEARNING"
             }
           },
           {
-            "id": "5f4cb38fe1c6291b",
+            "id": "040ca2ba80bb04c0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1 - TODO.md",
+                "file": "Graph Positional and Structural Encoder.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1 - TODO"
+              "title": "Graph Positional and Structural Encoder"
             }
           }
         ],
@@ -68,7 +54,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false,
+                "autoReveal": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
@@ -107,8 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 642.9736938476562
   },
   "right": {
     "id": "bb868867b3306081",
@@ -213,37 +198,42 @@
       "bases:Create new base": false
     }
   },
-  "active": "61013cf0ddd6edd7",
+  "active": "efe63b68cf3a0186",
   "lastOpenFiles": [
+    "over-smoothing.md",
+    "Papers/SIGN AND BASIS INVARIANT NETWORKS FOR SPECTRAL GRAPH REPRESENTATION LEARNING.pdf",
+    "Graph Positional and Structural Encoder.md",
+    "images/Pasted image 20261014155907.png",
     "Spectral Geometry Processing with Manifold Harmonics.md",
-    "Papers/Spectral Geometry Processing with Manifold Harmonics.pdf",
-    "1 - TODO.md",
-    "Papers/Attention Is All You Need.pdf",
-    "Papers/rethinking_graph_transformers.pdf",
+    "Papers/Graph Positional and Structural Encoder.pdf",
+    "Papers/what_improvise_generalization_of_graph.pdf",
     "Papers/Spectral Graph theory Introduction.pdf",
-    "Manifolds.md",
-    "images/Pasted image 20261009175338.png",
-    "What Improves the Generalization of Graph Transformers? A Theoretical Diveinto the Self-attention and Positional Encoding.md",
-    "Transformers.md",
-    "Linear Algebra Fundamentals.md",
-    "Introduction to Spectral Graph Theory.md",
-    "images/Pasted image 20261008182946.png",
-    "Laplacian Matrix.md",
-    "Laplacian Spectrum.md",
-    "Books/Spectral Graph Theory (CBMS Regional Conference Series in Mathematics, No. 92) (Fan R. K. Chung) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
-    "Orthogonal Matrices.md",
-    "over-squashing.md",
-    "Sign and Basis Invariant Networks For Spectral Graph Representation Learning.md",
+    "Papers/Spectral Geometry Processing with Manifold Harmonics.pdf",
     "Rethinking Graph Transformers with Spectral Attention.md",
-    "oversmoothing.md",
+    "images/Pasted image 20261009175338.png",
+    "images/Pasted image 20261008182946.png",
+    "images/Pasted image 20260424183846.png",
+    "Papers/rethinking_graph_transformers.pdf",
+    "Papers/Pasted image 20261009175338.png",
+    "Manifolds.md",
+    "Pasted image 20261009175338.png",
+    "Transformers.md",
+    "Sign and Basis Invariant Networks For Spectral Graph Representation Learning.md",
+    "Laplacian Spectrum.md",
+    "Introduction to Spectral Graph Theory.md",
+    "1 - TODO.md",
     "Orthogonal Group.md",
+    "Papers/Attention Is All You Need.pdf",
+    "What Improves the Generalization of Graph Transformers? A Theoretical Diveinto the Self-attention and Positional Encoding.md",
+    "Linear Algebra Fundamentals.md",
+    "over-squashing.md",
+    "Untitled.base",
+    "Untitled.canvas",
+    "Books/Spectral Graph Theory (CBMS Regional Conference Series in Mathematics, No. 92) (Fan R. K. Chung) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
     "Books",
     "Survey on Spectral Geometry as Positional Encoding in Graph Transformers.md",
-    "images/Pasted image 20260424183846.png",
-    "Papers/SIGN AND BASIS INVARIANT NETWORKS FOR SPECTRAL GRAPH REPRESENTATION LEARNING.pdf",
+    "Laplacian Matrix.md",
     "fully-connected transformer.md",
-    "Papers/what_improvise_generalization_of_graph.pdf",
-    "Papers/2406.01977v1.pdf",
-    "Papers/2809_rethinking_graph_transformers_.pdf"
+    "Orthogonal Matrices.md"
   ]
 }
