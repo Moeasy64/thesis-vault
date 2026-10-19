@@ -1,3 +1,5 @@
+
+[[Graph Positional and Structural Encoder.pdf]]
 ## Motivation
 As we already know, in a Graph Transformer (GT) the full self-attention between all pairs of nodes discards the inductive biases tied to the graph structure, which message passing models exploit well. In order to re-introduce this information, positional and structural encodings (PSE) are necessary. However, there is no PSE that performs at the top for every task:
 * Random walk encodings are better on molecular property prediction
@@ -5,17 +7,16 @@ As we already know, in a Graph Transformer (GT) the full self-attention between 
 * Empirically, concatenating different PSEs does not reliably improve performance: it can be worse than the best single PSE (e.g. GPS on ZINC), even if in some settings it helps (Table 3)
 
 GPSE (Graph Positional and Structural Encoder) is a self supervised MPNN (Message Passing Neural Network, GNN architecture) with a transferable and pre trained encoder. which extracts latent representations common to various PSE using the graph structure.
-Here the GPSE is not the final model, is just a pre-train step where we create an encoder for the generation of positional and structural feature that can be injected inside a final dowstream task. They used the standard GPS architecture trained from zero as downstream because it represented the state of the art at that moment. Anyway, other downstreams have been chosen exactly for demonstrate how this GPSE extracted features are in fact independent from the model.
+Here the GPSE is not the final model, is just a pre-train step where we create an encoder for the generation of positional and structural feature that can be injected inside a final downstream task. They used the standard GPS architecture trained from zero as downstream because it represented the state of the art at that moment. Anyway, other downstreams have been chosen exactly for demonstrate how this GPSE extracted features are in fact independent from the model.
 
 > [!NOTE] Use this PSE inside the Kreuzer architecture?
 > It could be a useful test to run to see if the spectral part is giving other informations, even flat transformers have been tested in this paper.
 
-The core idea is to train a MPNN (that will be our GPSE in the pipeline) trained only on feature resembling the graph structure.
-![[Pasted image 20261014155907.png]]As shown in the image on the step C, vertexes and edges (and the noise vector) are the only information in input for GPSE, edge and node features are passed directly the the downstream model. Here $G$ is a graph taken in input during the self-supervised learning of GPSE, $G'$ is an arbitrary graph taken in input during inference, and in fact the GPSE weights are frozen. 
-Let's see the pipeline in order:
+The core idea is to train a MPNN (our GPSE in the pipeline) only on feature resembling the graph structure.
+![[Pasted image 20261014155907.png]]As shown in the image on the step C, vertexes and edges (and the noise vector) are the only information in input to GPSE, edge and node features are passed directly the the downstream model. Here $G$ is a graph taken in input during the self-supervised learning of GPSE, $G'$ is an arbitrary graph taken in input during inference, and in fact the GPSE weights are frozen. 
 
 **Step A: building the input and forward pass.**
-A query graph $G$ is taken from the pre-training dataset (MolPCBA). Only its structure (nodes and edges) is kept: no atom or bond types. Since a MPNN needs an initial value for every node, each node $i$ receives a random vector $x_i \sim \mathcal{N}(0, I) \in \mathbb{R}^{20}$. This is pure noise, not an embedding: it is not learned and carries no meaning. Its role is to break the symmetry between nodes and to push the network beyond 1-WL expressivity.  The message passing runs on the graph and exchanges messages along its edges. The noise is projected into the hidden space only once, at the input:
+A query graph $G$ is taken from the pre-training dataset (MolPCBA). Only its structure (nodes and edges) is kept: no atom or bond types. Since a MPNN needs an initial value for every node, each node $i$ receives a random vector $x_i \sim \mathcal{N}(0, I) \in \mathbb{R}^{20}$. This is pure noise, not an embedding: it is not learned and carries no meaning. Its role is to break the symmetry between nodes and to push the network beyond[^1] 1-WL expressivity (Required by specific PSEs).  The message passing runs on the graph and exchanges messages along its edges. The noise is projected into the hidden space only once, at the input:
 
 $$
 h_i^{(0)} = \mathrm{ReLU}\left(x_i W_{\mathrm{inp}}\right), \qquad W_{\mathrm{inp}} \in \mathbb{R}^{20 \times 512}
@@ -36,7 +37,7 @@ $$
 \mathcal{L} = \sum_{k=1}^{K}\sum_{i=1}^{M}\left[\sum_{j=1}^{|V(G_i)|}\left|y^{(i)}_{j,k}-\hat{y}^{(i)}_{j,k}\right| + \left(1-\sum_{j=1}^{|V(G_i)|}\tilde{y}^{(i)}_{j,k}\,\tilde{\hat{y}}^{(i)}_{j,k}\right)\right]
 $$
 
-where $\tilde{y}$ and $\tilde{\hat{y}}$ are the $\ell_2$-normalized versions of $y$ and $\hat{y}$. Backpropagation updates the 20 layers and the heads. To lower the loss, the hidden space must encode the positional and structural information of each node.
+where $\tilde{y}$ and $\tilde{\hat{y}}$ are the $\ell_2$-normalized versions of $y$ and $\hat{y}$. Backpropagation updates the 20 layers and the heads. **To lower the loss, the hidden space must encode the positional and structural information of each node.**
 
 **Step C: inference and downstream.**
 Once GPSE is trained, the MLP heads are discarded and the 20 layers are **frozen**. From here on, GPSE is a pure feature extractor:
@@ -68,7 +69,7 @@ As we said, only nodes and edges are present as input, but a MPNN needs an initi
 
 The Laplacian is $L = D - M = U \Lambda U^\top$, with eigenpairs ordered as $0 = \lambda_1 \le \lambda_2 \le \dots \le \lambda_n$. Let $\hat{U}$ be the matrix of eigenvectors of the non-trivial eigenvalues ($\lambda_i \neq 0$).
 
-An eigenvector is defined only up to its sign: if $u$ is an eigenvector of $L$, so is $-u$, and both are equally valid. For a PSE used as an input feature this is a known issue, and it is usually handled by randomly flipping the signs during training (Dwivedi et al., 2022a) or by sign-invariant networks (SignNet, Lim et al., 2022).
+An eigenvector is defined only up to its sign: if $u$ is an eigenvector of $L$, so is $-u$, and both are equally valid. For a PSE used as an input feature this is a known issue, and it is usually handled by randomly flipping the signs during training (Dwivedi et al., 2022a) or by [[Sign and Basis Invariant Networks For Spectral Graph Representation Learning]].
 
 GPSE, however, has to **reconstruct** the PSE as a target, not use it as a feature. With a target defined up to sign, the loss would penalize a correct prediction that happens to have the opposite sign, and the tricks above do not solve this. The solution adopted is to define LapPE as the absolute value of the $\ell_2$-normalized eigenvector:
 
@@ -85,19 +86,20 @@ The first 4 eigenvectors are used as targets. This removes the sign ambiguity by
 3. `GPSE-signinvar`: sign-invariant loss, taking the minimum of the losses obtained with both signs
 4. `GPSE-SignNet`: target generated by a randomly initialized SignNet
 
-| Downstream dataset | abs (default) | no abs | sign-invariant loss | SignNet |
-|---|---|---|---|---|
-| ZINC (MAE $\downarrow$) | **0.0957** | 0.1051 | 0.1116 | 0.1035 |
-| PCQM4Mv2 (MAE $\downarrow$) | **0.1216** | 0.1229 | 0.1243 | 0.1232 |
-| Peptides-struct (MAE $\downarrow$) | **0.2516** | 0.2554 | 0.2594 | 0.2568 |
-| Peptides-func (AP $\uparrow$) | 0.6584 | **0.6687** | 0.6619 | 0.6647 |
+| Downstream dataset                 | abs (default) | no abs     | sign-invariant loss | SignNet |
+| ---------------------------------- | ------------- | ---------- | ------------------- | ------- |
+| ZINC (MAE $\downarrow$)            | **0.0957**    | 0.1051     | 0.1116              | 0.1035  |
+| PCQM4Mv2 (MAE $\downarrow$)        | **0.1216**    | 0.1229     | 0.1243              | 0.1232  |
+| Peptides-struct (MAE $\downarrow$) | **0.2516**    | 0.2554     | 0.2594              | 0.2568  |
+| Peptides-func (AP $\uparrow$)      | 0.6584        | **0.6687** | 0.6619              | 0.6647  |
 
-The absolute value is best on three out of four datasets, but not on Peptides-func, where the raw version is better (differences are within roughly one standard deviation there). The authors conclude it is "similar or better" than the alternatives, and leave better strategies for learning sign-invariant representations of eigenvectors as future work.
+> [!NOTE] Important observation
+> The absolute value is best on three out of four datasets, but not on Peptides-func, where the raw version is better (differences are within roughly one standard deviation there). The authors conclude it is "similar or better" than the alternatives, and leave better strategies for learning sign-invariant representations of eigenvectors as future work.
 
 **Connection with the thesis.**
 
 * This supports the choice of `abs(Fiedler)` and `abs(eigs)` as features (STEP 3), because it shows that dropping the sign is a reasonable, empirically tested option.
-* *Personal note (not from the paper):* the sign of the Fiedler vector carries information the absolute value discards, namely the partition of the graph into two sets of nodes (nodal domains). For the second approach of the thesis (using the Fiedler vector to **order** the vertices and define a canonical sequence) the signed values matter, so abs and signed versions are probably worth comparing explicitly.
+* *Personal note:* the sign of the Fiedler vector carries information the absolute value discards, namely the partition of the graph into two sets of nodes (nodal domains). For the second approach of the thesis (using the Fiedler vector to **order** the vertices and define a canonical sequence) the signed values matter, so abs and signed versions are probably worth comparing explicitly.
 
 ### Pros and cons of GPSE
 
@@ -117,3 +119,14 @@ The absolute value is best on three out of four datasets, but not on Peptides-fu
 | **Con** | Loses sign information                                         | LapPE is learned as an absolute value, so the sign of the eigenvectors (e.g. of the Fiedler vector) is not recoverable from the encoding                                                      |
 | **Con** | High-dimensional output                                        | $h^{(L)} \in \mathbb{R}^{512}$ must be reduced by a trainable PE encoder; the features are less interpretable than an explicit eigenvector                                                    |
 | **Con** | Stochastic input *(personal note, not discussed in the paper)* | The encoding depends on freshly sampled noise at each inference, so it is not deterministic; the paper does not quantify this variability                                                     |
+
+> [!NOTE] Does it work well on meshes?
+> Transfer to other domains is shown on benchmark graphs, but **not on 3D meshes**; whether it works on FAUST or SURREAL is an open question for the thesis
+
+[^1]: [^1]: **1-WL (1-dimensional Weisfeiler-Leman)** is a classical algorithm (color refinement) to test whether two graphs are non-isomorphic. All nodes start with the same color, then at each iteration the color of a node is updated from its own color and the multiset of its neighbors' colors:
+	
+	    $$
+	    c^{(t+1)}(v) = \mathrm{HASH}\Big(c^{(t)}(v),\ \{\!\{\, c^{(t)}(u) : u \in \mathcal{N}(v) \,\}\!\}\Big)
+	    $$
+	
+	    If the final color histograms of two graphs differ, the graphs are certainly non-isomorphic; if they coincide, the test is inconclusive. Since this update is the same as message passing, a MPNN cannot distinguish more graphs than 1-WL (Xu et al., 2019; Morris et al., 2019): this is what is meant by "1-WL expressivity". For example, a 6-cycle and two disjoint triangles are indistinguishable (every node has 2 neighbors), although only the latter contains triangles. Random input features, as used in GPSE, give each node a distinct label and allow going beyond this limit (Sato et al., 2021; Abboud et al., 2021).

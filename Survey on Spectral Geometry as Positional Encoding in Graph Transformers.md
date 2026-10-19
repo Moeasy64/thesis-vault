@@ -75,12 +75,12 @@ Regarding the **Fiedler value ($\lambda_2$):** no paper in the Graph Transformer
 
 ## Chronological Summary
 
-|Year|Paper|Key Contribution|
-|---|---|---|
-|2021|**SAN** (Kreuzer et al.)|First use of the full Laplacian spectrum as a learnable LPE|
-|2022|**SignNet/BasisNet** (Lim et al.)|Sign and basis invariance, provable universality|
-|2022|**PEG** (Wang et al.)|Stability + $O(p)$-equivariance guarantees|
-|2022|**GraphGPS** (Rampášek et al.)|Unified modular framework (LapPE + MPNN + global attention)|
-|2023|**Specformer** (Bo et al.)|Self-attention in the spectral domain over eigenvalues|
-|2023|**MagLap** (Geisler et al.)|Extension to directed graphs via the Magnetic Laplacian|
-|2024|**SPE** (Huang et al.)|Simultaneous stability and expressivity via soft eigenspace partition|
+| Year | Paper                             | Key Contribution                                                      |
+| ---- | --------------------------------- | --------------------------------------------------------------------- |
+| 2021 | **SAN** (Kreuzer et al.)          | First use of the full Laplacian spectrum as a learnable LPE           |
+| 2022 | **SignNet/BasisNet** (Lim et al.) | Sign and basis invariance, provable universality                      |
+| 2022 | **PEG** (Wang et al.)             | Stability + $O(p)$-equivariance guarantees                            |
+| 2022 | **GraphGPS** (Rampášek et al.)    | Unified modular framework (LapPE + MPNN + global attention)           |
+| 2023 | **Specformer** (Bo et al.)        | Self-attention in the spectral domain over eigenvalues                |
+| 2023 | **MagLap** (Geisler et al.)       | Extension to directed graphs via the Magnetic Laplacian               |
+| 2024 | **SPE** (Huang et al.)            | Simultaneous stability and expressivity via soft eigenspace partition |
