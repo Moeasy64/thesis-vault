@@ -53,7 +53,7 @@ embedding_h = nn.Embedding(num_atom_type, d − k)
 > [!WARNING] Discrepancy in the paper
 > Here, a sign invertion during training is needed as augmentation technique. Although the function for doing so is present in the code, it is never used. So every test reported for nodes LPE is actually missing this important augmentation technique that it is cited to be used in the paper.
 ### LPE Over Edges
-This method also makes the LPE sign-invariant. Moreover, the LPE over nodes is an *absolute* positional encoding, because hte positional vector of a node $j$ is just built upon its component $\phi_{i,j}$ and its spectrum. Here the LPE is *relative*. The idea is to consider relative positions encoded as edge features: given two nodes $j_1$ and $j_2$, we'll use two operators:
+This method also makes the LPE sign-invariant. Moreover, the LPE over nodes is an *absolute* positional encoding, because the positional vector of a node $j$ is just built upon its component $\phi_{i,j}$ and its spectrum. Here the LPE is *relative*. The idea is to consider relative positions encoded as edge features: given two nodes $j_1$ and $j_2$, we'll use two operators:
 $$
 |\phi_{i,j_1} - \phi_{i,j_2}|
 $$

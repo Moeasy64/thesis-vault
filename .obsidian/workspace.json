@@ -28,29 +28,17 @@
         "dimension": 48.97828863346105,
         "children": [
           {
-            "id": "61013cf0ddd6edd7",
+            "id": "bb33c6b3051477ae",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "NAPE.md",
+                "file": "Centrality Guided Pre-Training for Graph.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "NAPE"
-            }
-          },
-          {
-            "id": "7fba755de3ef6957",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Papers/Attention Is All You Need.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Attention Is All You Need"
+              "title": "Centrality Guided Pre-Training for Graph"
             }
           }
         ]
@@ -220,8 +208,14 @@
   },
   "active": "f9a07bb6ca4ea9f7",
   "lastOpenFiles": [
-    "Papers/NAPE_Numbering_as_a_Position_Encoding_in_Graphs.pdf",
+    "Centrality Guided Pre-Training for Graph.md",
     "Papers/Centrality Guided Pre-Training for Graph.pdf",
+    "Singular Value Decomposition.md",
+    "Eigenvector Centrality.md",
+    "Pasted image 20261021204457.png",
+    "Rethinking Graph Transformers with Spectral Attention.md",
+    "What Improves the Generalization of Graph Transformers? A Theoretical Diveinto the Self-attention and Positional Encoding.md",
+    "Papers/NAPE_Numbering_as_a_Position_Encoding_in_Graphs.pdf",
     "NAPE.md",
     "Papers/Attention Is All You Need.pdf",
     "Papers/SIGN AND BASIS INVARIANT NETWORKS FOR SPECTRAL GRAPH REPRESENTATION LEARNING.pdf",
@@ -235,7 +229,6 @@
     "Introduction to Spectral Graph Theory.md",
     "Papers/Graph Positional and Structural Encoder.pdf",
     "1 - TODO.md",
-    "What Improves the Generalization of Graph Transformers? A Theoretical Diveinto the Self-attention and Positional Encoding.md",
     "Spectral Geometry Processing with Manifold Harmonics.md",
     "over-smoothing.md",
     "images/Pasted image 20261014155907.png",
@@ -250,10 +243,8 @@
     "Orthogonal Matrices.md",
     "over-squashing.md",
     "Sign and Basis Invariant Networks For Spectral Graph Representation Learning.md",
-    "Rethinking Graph Transformers with Spectral Attention.md",
     "oversmoothing.md",
     "Orthogonal Group.md",
-    "Books",
     "images/Pasted image 20260424183846.png"
   ]
 }
