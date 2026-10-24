@@ -1,0 +1,7 @@
+It Addresses two fundamental challenges of using Laplacian eigenvectors as positional encodings: 
+1. **Non-uniqueness**: there are many different eigendecompositions of the same Laplacian
+2. **Instability**:  small perturbations to the Laplacian can result in completely different eigenspaces, leading to unpredictable changes in positional encoding i.e. we would like that similar graphs has similar spectra. The root cause of instability is identified as a "hard partitioning" of eigenspaces. SPE instead introduces a **soft and learnable partition** of eigenspaces in an eigenvalue-dependent manner, simultaneously achieving stability (from the soft partition) and expressivity. This paper is particularly relevant for understanding why the Fiedler value ($\lambda_2$) is unstable in the presence of degenerate or near-degenerate eigenvalues.
+
+Basis invariant methods such as BasisNet are unstable because they apply different neural networks to different eigensubspaces. In a high-level view, they perform a hard partitioning of eigenspaces and treat each chunk separately. 
+
+In this work, we present Stable and Expressive Positional Encodings (SPE). The key insight is to perform a **soft and learnable** “partition” of eigensubspaces in a eigenvalue dependent way, hereby achieving both stability (from the soft partition) and expressivity (from dependency on both eigenvalues and eigenvectors).

@@ -8,6 +8,8 @@ Type: Paper
 # Objective
 Extending the capability of transformers to non-sequential data through the **Spectral Attention Network (SAN)**.
 
+Exploiting eigenvalue decomposition to generalize relative positional encoding from [[Attention Is All You Need.pdf]] to nodes or edges of a graph. The eigenvalue decomposition is a strong candidate because the Laplacian fully describes the adjacency structure of a graph, and there is a deep understanding of how these eigenvectors and eigenvalues inherit this information (Spectral graph theory).
+
 It exploit the **Learned Positional Encoding (LPE)** in order to globally acquire the position of every node inside a graph.
 
 The model use LPE to extract and acquire the positional informations from the **[[Laplacian Spectrum]]**.
