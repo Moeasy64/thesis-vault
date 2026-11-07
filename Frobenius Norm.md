@@ -1,0 +1,1 @@
+It's a measure for the size of a matrix $n \times m$. Intuitively, it apply a flattening of the matrix into a vector to compute its $L_2$ norm.

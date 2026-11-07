@@ -6,7 +6,7 @@
       {
         "id": "a2518cbefb1f15e5",
         "type": "tabs",
-        "dimension": 48.595146871008936,
+        "dimension": 48.78671775223499,
         "children": [
           {
             "id": "f9a07bb6ca4ea9f7",
@@ -21,44 +21,9 @@
               "icon": "lucide-file",
               "title": "Survey on Spectral Geometry as Positional Encoding in Graph Transformers"
             }
-          }
-        ]
-      },
-      {
-        "id": "851ee39a7660288f",
-        "type": "tabs",
-        "dimension": 51.40485312899106,
-        "children": [
-          {
-            "id": "c4c939526eb5a7b9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Graph Positional and Structural Encoder.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Graph Positional and Structural Encoder"
-            }
           },
           {
-            "id": "2045de2b2886c6b1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "On the stability of Expressive Positional Encodings for Graphs (SPE).md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "On the stability of Expressive Positional Encodings for Graphs (SPE)"
-            }
-          },
-          {
-            "id": "30d5f6f6ab9e79bf",
+            "id": "27c1ef33805b88c5",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -71,8 +36,57 @@
               "title": "Obstacles"
             }
           }
+        ]
+      },
+      {
+        "id": "9254224907196f27",
+        "type": "tabs",
+        "dimension": 51.213282247765,
+        "children": [
+          {
+            "id": "708548377bfb71a1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Singular Value Decomposition.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Singular Value Decomposition"
+            }
+          },
+          {
+            "id": "c55bfdf67ef1bd35",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Obstacles.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Obstacles"
+            }
+          },
+          {
+            "id": "332140e8cbcb0f40",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Lipschitz Continuity.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Lipschitz Continuity"
+            }
+          }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -236,47 +250,51 @@
       "bases:Create new base": false
     }
   },
-  "active": "30d5f6f6ab9e79bf",
+  "active": "c55bfdf67ef1bd35",
   "lastOpenFiles": [
-    "Papers/rethinking_graph_transformers.pdf",
+    "Presentations/presentation1/pdflatex33581.fls",
+    "Presentations/presentation1/pdflatex33515.fls",
+    "Presentations/presentation1/pdflatex33452.fls",
+    "Presentations/presentation1/pdflatex33241.fls",
+    "Presentations/presentation1/pdflatex33230.fls",
+    "Presentations/presentation1/pdflatex33177.fls",
+    "Presentations/presentation1/pdflatex33114.fls",
+    "Presentations/presentation1/pdflatex33089.fls",
+    "Presentations/presentation1/pdflatex33020.fls",
+    "Presentations/presentation1/main.vrb",
+    "Presentations/presentation1/pdflatex33009.fls",
+    "Presentations/presentation1/figures/san_fig1.png",
+    "Presentations/presentation1/figures/san_fig2.png",
+    "NAPE.md",
+    "Sign and Basis Invariant Networks For Spectral Graph Representation Learning.md",
+    "Permutation Matrices.md",
+    "Frobenius Norm.md",
+    "Eigendecomposition.md",
+    "Survey on Spectral Geometry as Positional Encoding in Graph Transformers.md",
     "Obstacles.md",
-    "Graph Positional and Structural Encoder.md",
+    "Lipschitz Continuity.md",
+    "Singular Value Decomposition.md",
+    "What Improves the Generalization of Graph Transformers? A Theoretical Diveinto the Self-attention and Positional Encoding.md",
+    "Transformers.md",
+    "Spectral Geometry Processing with Manifold Harmonics.md",
     "On the stability of Expressive Positional Encodings for Graphs (SPE).md",
+    "Pasted image 20261025195029.png",
+    "Eigenvector Centrality.md",
+    "Graph Positional and Structural Encoder.md",
     "Rethinking Graph Transformers with Spectral Attention.md",
     "fully-connected transformer.md",
-    "Eigenvector Centrality.md",
-    "Papers/NAPE_Numbering_as_a_Position_Encoding_in_Graphs.pdf",
     "Centrality Guided Pre-Training for Graph.md",
-    "Survey on Spectral Geometry as Positional Encoding in Graph Transformers.md",
-    "Papers/Centrality Guided Pre-Training for Graph.pdf",
-    "Papers/On The Stability of Expressing positional Encoding.pdf",
-    "Singular Value Decomposition.md",
     "images/Pasted image 20261021204457.png",
-    "What Improves the Generalization of Graph Transformers? A Theoretical Diveinto the Self-attention and Positional Encoding.md",
-    "NAPE.md",
-    "Papers/Attention Is All You Need.pdf",
-    "Papers/SIGN AND BASIS INVARIANT NETWORKS FOR SPECTRAL GRAPH REPRESENTATION LEARNING.pdf",
-    "Papers/what_improvise_generalization_of_graph.pdf",
-    "Papers/Spectral Graph theory Introduction.pdf",
-    "Papers/Spectral Geometry Processing with Manifold Harmonics.pdf",
     "Laplacian Matrix.md",
     "Introduction to Spectral Graph Theory.md",
-    "Papers/Graph Positional and Structural Encoder.pdf",
     "1 - TODO.md",
-    "Spectral Geometry Processing with Manifold Harmonics.md",
     "over-smoothing.md",
     "images/Pasted image 20261014155907.png",
     "Manifolds.md",
     "images/Pasted image 20261009175338.png",
-    "Transformers.md",
     "Linear Algebra Fundamentals.md",
     "images/Pasted image 20261008182946.png",
     "Laplacian Spectrum.md",
-    "Orthogonal Matrices.md",
-    "over-squashing.md",
-    "Sign and Basis Invariant Networks For Spectral Graph Representation Learning.md",
-    "oversmoothing.md",
-    "Orthogonal Group.md",
     "images/Pasted image 20260424183846.png"
   ]
 }

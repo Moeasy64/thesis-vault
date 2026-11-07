@@ -9,7 +9,7 @@ NAPE proposes a positional encoding (PE) for graphs that **never computes Laplac
 ## Idea
 NAPE builds on the sinusoidal PE of Vaswani et al. ([[Attention Is All You Need.pdf]]), which is related to the Laplacian eigenvectors of a (directed) path graph, where the node order is already given.`
 
-On a general graph there is no natural order ($|V|!$ possible numberings), so NAPE **learns a numbering** of the nodes so that this two key objectives are pursued:
+On a general graph there is no natural order ($|V|!$ possible numberings), so NAPE **learns a numbering** of the nodes so that two key objectives are pursued:
 1.  Proximity preservation: Nodes connected by edges in the original graph should be positioned close together within the hypercube embedding. 
 2.  Degree-based locality: Nodes with identical degrees in the original graph should be mapped to nearby locations within the hypercube.
 ## Algorithm
